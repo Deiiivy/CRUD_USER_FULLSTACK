@@ -46,5 +46,5 @@ Start the Client
 From the client folder:
 
 ```bash
-npm start
+npm run dev
 ```
