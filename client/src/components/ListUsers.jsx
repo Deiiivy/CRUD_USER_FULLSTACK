@@ -35,7 +35,7 @@ function ListUsers() {
 
               <div className='mt-4 flex gap-4'>
                 <button className='bg-red-600 text-white py-2 px-4 rounded-2xl hover:bg-red-500' onClick={() => deleteUser(list._id)}>Delete</button>
-                <Link to='/update' className='bg-blue-600 text-white py-2 px-4 rounded-2xl hover:bg-blue-500'>Update</Link>
+                <Link to={`/update/${list._id}`} className='bg-blue-600 text-white py-2 px-4 rounded-2xl hover:bg-blue-500'>Update</Link>
               </div>
             </div>
           </div>

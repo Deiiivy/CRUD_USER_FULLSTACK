@@ -7,6 +7,7 @@ function CreateUser() {
   const [age, setAge] = useState(0);
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [showAlert, setShowAlert] = useState(false)
 
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -27,6 +28,8 @@ function CreateUser() {
 
     console.log(userData);
     await axios.post('http://localhost:3004/manage/users/create', userData)
+    setShowAlert(true)
+    
   }
 
   return (
@@ -51,6 +54,10 @@ function CreateUser() {
         </div>
         <button type='submit' className='bg-green-600 py-2 px-4 rounded-xl my-6 text-white hover:bg-green-700'>Submit</button>
       </form>
+      {showAlert && <div className='bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4' role='alert'>
+            <p className='font-bold'>Usuario creado con éxito!</p>
+            <p>El usuario se ha creado correctamente.</p>
+          </div>}
     </div>
   )
 }
